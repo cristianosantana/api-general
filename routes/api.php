@@ -41,3 +41,14 @@ Route::get('concessionaires/{cnpj}', 'App\Http\Controllers\ConcessionaireControl
 Route::post('concessionaires', 'App\Http\Controllers\ConcessionaireController@createConcessionaire');
 Route::put('concessionaires/{id}', 'App\Http\Controllers\ConcessionaireController@updateConcessionaire');
 Route::delete('concessionaires/{id}', 'App\Http\Controllers\ConcessionaireController@deleteConcessionaire');
+
+/*
+|------------------------
+| DEPARTMENTS
+|------------------------
+*/
+Route::get('departments', 'App\Http\Controllers\DepartmentController@getAllDepartments');
+Route::get('departments/{acronym}', 'App\Http\Controllers\DepartmentController@getDepartment');
+Route::post('departments', 'App\Http\Controllers\DepartmentController@createDepartment');
+Route::put('departments/{id}', 'App\Http\Controllers\DepartmentController@updateDepartment');
+Route::delete('departments/{id}', 'App\Http\Controllers\DepartmentController@deleteDepartment');
