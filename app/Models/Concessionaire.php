@@ -18,7 +18,13 @@ class Concessionaire extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'id',
         'name',
         'cnpj',
     ];
+
+    public function getconcessionaires()
+    {
+        return $this->belongsToMany(Department::class, 'concessionaire_departments', 'id_concessionaire', 'id_department');
+    }
 }

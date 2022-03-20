@@ -52,3 +52,11 @@ Route::get('departments/{acronym}', 'App\Http\Controllers\DepartmentController@g
 Route::post('departments', 'App\Http\Controllers\DepartmentController@createDepartment');
 Route::put('departments/{id}', 'App\Http\Controllers\DepartmentController@updateDepartment');
 Route::delete('departments/{id}', 'App\Http\Controllers\DepartmentController@deleteDepartment');
+
+/*
+|------------------------
+| CONCESSIONAIRE_DEPARTMENTS
+|------------------------
+*/
+Route::post('linkEntities', 'App\Http\Controllers\ConcessionaireDepartmentController@create');
+Route::get('departmentsByConcessionaires/{cnpj}', 'App\Http\Controllers\ConcessionaireController@getDepartmentsByConcessionaire');
