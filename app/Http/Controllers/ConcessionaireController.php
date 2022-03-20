@@ -74,8 +74,8 @@ class ConcessionaireController extends Controller
             $concessionaire = Concessionaire::where('cnpj', $cnpj)->get();
             $result = Concessionaire::find($concessionaire[0]->id);
             
-            if($result->getconcessionaires()->get()->toJson(JSON_PRETTY_PRINT) != "[]") {
-                $links = $result->getconcessionaires()->get()->toJson(JSON_PRETTY_PRINT);
+            if($result->getConcessionaires()->get()->toJson(JSON_PRETTY_PRINT) != "[]") {
+                $links = $result->getConcessionaires()->get()->toJson(JSON_PRETTY_PRINT);
             } else {
                 return response()->json([
                     "message" => "Não há departamentos"
@@ -88,8 +88,5 @@ class ConcessionaireController extends Controller
                 "message" => "Registro não encontrado"
             ], 404);
         }
-        
-        
-
     }
 }

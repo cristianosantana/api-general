@@ -11,5 +11,14 @@ class Department extends Model
 
     protected $table = 'departments';
 
-    protected $fillable = ['name', 'acronym'];
+    protected $fillable = [
+        'id',
+        'name', 
+        'acronym'
+    ];
+
+    public function getDepartments()
+    {
+        return $this->belongsToMany(Concessionaire::class, 'concessionaire_departments', 'id_department', 'id_concessionaire');
+    }
 }

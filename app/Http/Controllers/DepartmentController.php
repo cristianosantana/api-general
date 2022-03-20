@@ -68,4 +68,25 @@ class DepartmentController extends Controller
             ], 404);
         }    
     }
+
+    public function getConcessionairesByDepartment($acronym) {
+        if(Department::where('acronym', $acronym)->exists()) {
+            $department = Department::where('acronym', $acronym)->get();
+            $result = Department::find($department[0]->id);
+            
+            if($result->getDepartments()->get()->toJson(JSON_PRETTY_PRINT) != "[]") {
+                $links = $result->getDepartments()->get()->toJson(JSON_PRETTY_PRINT);
+            } else {
+                return response()->json([
+                    "message" => "Não há Concessionárias"
+                ], 404);    
+            }
+                        
+            return response($links, 200);
+        } else {
+            return response()->json([
+                "message" => "Registro não encontrado"
+            ], 404);
+        }
+    }
 }

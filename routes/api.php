@@ -60,3 +60,4 @@ Route::delete('departments/{id}', 'App\Http\Controllers\DepartmentController@del
 */
 Route::post('linkEntities', 'App\Http\Controllers\ConcessionaireDepartmentController@create');
 Route::get('departmentsByConcessionaires/{cnpj}', 'App\Http\Controllers\ConcessionaireController@getDepartmentsByConcessionaire');
+Route::get('concessionairesByDepartment/{acronym}', 'App\Http\Controllers\DepartmentController@getConcessionairesByDepartment');

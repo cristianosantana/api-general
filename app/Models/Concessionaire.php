@@ -23,7 +23,7 @@ class Concessionaire extends Model
         'cnpj',
     ];
 
-    public function getconcessionaires()
+    public function getConcessionaires()
     {
         return $this->belongsToMany(Department::class, 'concessionaire_departments', 'id_concessionaire', 'id_department');
     }
