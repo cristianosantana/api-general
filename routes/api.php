@@ -33,6 +33,11 @@ Route::delete('users/{id}','App\Http\Controllers\ApiController@deleteUser');
 
 /*
 |------------------------
-| USERS
+| CONCESSIONAIRES
 |------------------------
 */
+Route::get('concessionaires', 'App\Http\Controllers\ConcessionaireController@getAllConcessionaires');
+Route::get('concessionaires/{cnpj}', 'App\Http\Controllers\ConcessionaireController@getConcessionaire');
+Route::post('concessionaires', 'App\Http\Controllers\ConcessionaireController@createConcessionaire');
+Route::put('concessionaires/{id}', 'App\Http\Controllers\ConcessionaireController@updateConcessionaire');
+Route::delete('concessionaires/{id}', 'App\Http\Controllers\ConcessionaireController@deleteConcessionaire');
